@@ -1,4 +1,3 @@
-console.log("hello");
 var timelineSwiper = new Swiper ('.timeline .swiper-container', {
   direction: 'vertical',
   loop: false,

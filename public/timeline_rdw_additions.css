@@ -1,0 +1,16 @@
+.p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9 {
+    display: none
+}
+
+button {
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  cursor:pointer;
+  border:none;
+  background: #d4a024;
+  color:white;
+  margin-left: 0.4em;
+}
+
