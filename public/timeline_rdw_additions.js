@@ -1,36 +1,34 @@
-nextParagraphButtons = document.querySelectorAll(".nextParagraph");
-resetParagraphButtons = document.querySelectorAll(".resetParagraphs");
-
-
 "use strict";
+
+// init paragraph toggler
 var paragraphToggler = {};
-var paragraphNum = 1;
-
-resetParagraphButtons.forEach(function(x){
-   x.addEventListener("click", function(){
-     var priorParagraphNum = paragraphNum;
-     paragraphNum = 1;
-     showThisParagraph(paragraphNum, priorParagraphNum);
-   });
-});
-
-nextParagraphButtons.forEach(function(x){
-   x.addEventListener("click", function(){
-     var priorParagraphNum = paragraphNum;
-     paragraphNum += 1;
-     showThisParagraph(paragraphNum, priorParagraphNum);
-   });
-});
-
-function showThisParagraph(thisParagraphNum, priorParagraphNum) {
-
-   var currentParagraphs = document.querySelectorAll(".p" + priorParagraphNum);
+paragraphToggler.currentNumber = 1;
+paragraphToggler.priorNumber = undefined;
+paragraphToggler.showCurrentHidePrior = function() {
+   var currentParagraphs = document.querySelectorAll(".p" + this.priorNumber);
    currentParagraphs.forEach(function(p){
        p.style.display = "none";
    });
 
-   var nextParagraphs = document.querySelectorAll(".p" + thisParagraphNum);
+   var nextParagraphs = document.querySelectorAll(".p" + this.currentNumber);
    nextParagraphs.forEach(function(p){
        p.style.display = "block";
    });
-};
+}
+
+document.querySelectorAll(".nextParagraph").forEach(function(x){
+   x.addEventListener("click", function(){
+     paragraphToggler.priorNumber = paragraphToggler.currentNumber;
+     paragraphToggler.currentNumber += 1;
+     paragraphToggler.showCurrentHidePrior();
+   });
+});
+
+
+document.querySelectorAll(".resetParagraphs").forEach(function(x){
+   x.addEventListener("click", function(){
+     paragraphToggler.priorNumber = paragraphToggler.currentNumber;
+     paragraphToggler.currentNumber = 1;
+     paragraphToggler.showCurrentHidePrior();
+   });
+});
