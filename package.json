@@ -1,0 +1,23 @@
+{
+  "name": "theaquarianteacher",
+  "version": "1.0.0",
+  "description": "theAquarianTeacher - An interactive Experience of the KRI Level one instructor textbook",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertdavidwest/theAquarianTeacher.git"
+  },
+  "author": "Robert D. West",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertdavidwest/theAquarianTeacher/issues"
+  },
+  "homepage": "https://github.com/robertdavidwest/theAquarianTeacher#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
