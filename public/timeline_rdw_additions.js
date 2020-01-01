@@ -5,12 +5,12 @@ var paragraphToggler = {};
 paragraphToggler.currentNumber = 1;
 paragraphToggler.priorNumber = undefined;
 paragraphToggler.showCurrentHidePrior = function() {
-   var currentParagraphs = document.querySelectorAll(".p" + this.priorNumber);
+   var currentParagraphs = document.querySelectorAll(".para" + this.priorNumber);
    currentParagraphs.forEach(function(p){
        p.style.display = "none";
    });
 
-   var nextParagraphs = document.querySelectorAll(".p" + this.currentNumber);
+   var nextParagraphs = document.querySelectorAll(".para" + this.currentNumber);
    nextParagraphs.forEach(function(p){
        p.style.display = "block";
    });
