@@ -11,10 +11,14 @@ app.get("/", function(req, res){
     res.render("home");
 });
 
+app.get("/chapters", function(req, res){
+    res.render("chapters");
+});
+
 app.get("/4/a-brief-history-of-yoga", function(req, res){
     let rawHist = fs.readFileSync("history.json");
     let hist = JSON.parse(rawHist);
-    res.render("history", {data: hist});
+    res.render("c4_history", {data: hist});
 });
 
 app.listen(3000);
