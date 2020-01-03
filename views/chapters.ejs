@@ -1,20 +1,29 @@
 <%- include('partials/header.ejs') %>
   <div class="container">
     <header class="jumbotron">
-      <h1>Chapters</h1>
-    </header>
-
-    <% chapters.forEach(function(chapter){ %>
-      <div>
-        <h4>
-            <%= chapter.number%>. 
-            <a href="/chapters/<%= chapter.number%>/<%= chapter.routeName %>">
-                <%= chapter.name %>
-            </a>
-        </h4>
-        <!--<img src="<%=chapter.tileImageUrl %>">-->
+      <div class="container">
+        <h1>Chapters</h1>
+        <p>info about chapters</p>
       </div>
-    <% }) %>
+    </header>
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <% chapters.forEach(function(chapter){ %>
+          <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+              <h4>
+                  <%= chapter.number%>. 
+                  <a href="/chapters/<%= chapter.number%>/<%= chapter.routeName %>">
+                      <%= chapter.name %>
+                  </a>
+              </h4>
+              <img src="<%=chapter.tileImageUrl %>">
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
   </div>
 <%- include('partials/footer.ejs') %>
 
